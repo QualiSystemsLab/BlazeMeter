@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TopologyInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Details Name="Leads App - Service Virtualization" Alias="Leads App - Service Virtualization" Driver="Python Setup &amp; Teardown" SetupDuration="2" TeardownDuration="2" Public="true" ImageName="Leads App - Service Virtualization.png" DefaultDuration="120">
+    <Description>Leads tracking web app with virtualized SalesForce using CA Service Virtualization</Description>
+    <Instructions>&lt;iframe src="/Instruction/Demos/Flex" scrolling="yes" height="100%" frameborder="0" width="100%"&gt;&lt;/iframe&gt;</Instructions>
+    <Categories>
+      <Category Name="LaaS" SubCategory="Development" />
+    </Categories>
+    <Scripts>
+      <Script Name="Env_Start_BlazeMeter_Test" />
+      <Script Name="Env_Deactivate_Virtual_Endpoint" />
+      <Script Name="Env_Activate_Virtual_Endpoint" />
+      <Script Name="Env_Update_BlazeMeter" />
+      <Script Name="Default Sandbox Teardown" />
+      <Script Name="Default Sandbox Setup" />
+      <Script Name="Env_Configure_Web_Application" />
+    </Scripts>
+    <Diagram Zoom="0.9" NodeSize="Medium" />
+  </Details>
+  <Services>
+    <Service PositionX="2931" PositionY="42" Alias="Admin-Utility Service" ServiceName="Admin-Utility Service">
+      <Attributes>
+        <Attribute Name="Execution Server Selector" Value="" />
+        <Attribute Name="Auto Add To Reservation" Value="False" />
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+    </Service>
+  </Services>
+  <Apps>
+    <App PositionX="581" PositionY="523.25" TemplateName="Generic Cloud App">
+      <AppResourceInfo Name="Database Server 2" ImagePath="Leads App - Service Virtualization_Database Server 2.png">
+        <AppResources>
+          <AppResource ModelName="Linux Virtual Machine" Driver="">
+            <Attributes>
+              <Attribute Name="CPU Cores" Value="1" />
+              <Attribute Name="Enable_SSH" Value="True" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="MSO" />
+              <Attribute Name="OS" Value="Ubuntu" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="RAM Size" Value="2048" />
+              <Attribute Name="SSH_Port" Value="22" />
+              <Attribute Name="User" Value="root" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="1148.2689075630251" PositionY="216.19047619047615" TemplateName="">
+      <AppResourceInfo Name="Leads Load Balancer" ImagePath="Leads App - Service Virtualization_Leads Load Balancer.png">
+        <AppResources>
+          <AppResource ModelName="Apache Website" Driver="">
+            <Attributes>
+              <Attribute Name="Enable_SSH" Value="" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="http://52.88.191.139:5002/api/leads" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="YKm0/VpXNSqTQ13Qot+/klb5s+RCkQ1G6V0aB9C/7ziQSYnBy0b0+7XBu54rNTGtzwVPceZSuFA9juXuyaQhE0DIcV+9R2aCnrCqqZOEnWE=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.nano" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="324.25" PositionY="523.25" TemplateName="Generic Cloud App">
+      <AppResourceInfo Name="Database Server 1" ImagePath="Leads App - Service Virtualization_Database Server 1.png">
+        <AppResources>
+          <AppResource ModelName="Linux Virtual Machine" Driver="">
+            <Attributes>
+              <Attribute Name="CPU Cores" Value="1" />
+              <Attribute Name="Enable_SSH" Value="True" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="MSO" />
+              <Attribute Name="OS" Value="Ubuntu" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="RAM Size" Value="2048" />
+              <Attribute Name="SSH_Port" Value="22" />
+              <Attribute Name="User" Value="root" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="813" PositionY="60" TemplateName="Sales Web App 2">
+      <AppResourceInfo Name="Apache Website 3" ImagePath="Leads App - Service Virtualization_Apache Website 3.png">
+        <AppResources>
+          <AppResource ModelName="Sales Web App" Driver="">
+            <Attributes>
+              <Attribute Name="Comm_IP" Value="" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="http://52.88.191.139:5001/leads.html" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="813" PositionY="216.19047619047615" TemplateName="Sales Web App 2">
+      <AppResourceInfo Name="Apache Website 1" ImagePath="Leads App - Service Virtualization_Apache Website 1.png">
+        <AppResources>
+          <AppResource ModelName="Sales Web App" Driver="">
+            <Attributes>
+              <Attribute Name="Comm_IP" Value="" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="http://52.88.191.139:5001/leads.html" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="813" PositionY="377.18892045454544" TemplateName="Sales Web App 2">
+      <AppResourceInfo Name="Apache Website 2" ImagePath="Leads App - Service Virtualization_Apache Website 2.png">
+        <AppResources>
+          <AppResource ModelName="Sales Web App" Driver="">
+            <Attributes>
+              <Attribute Name="Comm_IP" Value="" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="http://52.88.191.139:5001/leads.html" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="1459" PositionY="216.19047619047615" TemplateName="SaaS Endpoint 5">
+      <AppResourceInfo Name="BlazeMeter" ImagePath="Leads App - Service Virtualization_BlazeMeter.png">
+        <AppResources>
+          <AppResource ModelName="SaaS Application" Driver="">
+            <Attributes>
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="https://a.blazemeter.com/app/#/accounts/136980/workspaces/130437/dashboard" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="491.25" PositionY="216.19047619047615" TemplateName="Generic Cloud App">
+      <AppResourceInfo Name="Leads Core" ImagePath="Leads App - Service Virtualization_Leads Core.png">
+        <AppResources>
+          <AppResource ModelName="Linux Virtual Machine" Driver="">
+            <Attributes>
+              <Attribute Name="CPU Cores" Value="1" />
+              <Attribute Name="Enable_SSH" Value="True" />
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="MSO" />
+              <Attribute Name="OS" Value="Ubuntu" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="RAM Size" Value="2048" />
+              <Attribute Name="SSH_Port" Value="22" />
+              <Attribute Name="User" Value="root" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+    <App PositionX="167.25" PositionY="216.19047619047615" TemplateName="SaaS Endpoint 5">
+      <AppResourceInfo Name="Virtualized SalesForce" ImagePath="Leads App - Service Virtualization_Virtualized SalesForce.png">
+        <AppResources>
+          <AppResource ModelName="SaaS Application" Driver="">
+            <Attributes>
+              <Attribute Name="ExecutionServer" Value="Production" />
+              <Attribute Name="Lab" Value="Global" />
+              <Attribute Name="OS" Value="" />
+              <Attribute Name="Password" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+              <Attribute Name="Power State" Value="Off" />
+              <Attribute Name="User" Value="" />
+              <Attribute Name="Web Interface" Value="http://13.65.207.39:1505/api/Dcm/VSEs/VSE/data-driven-http-rest/actions/start" />
+            </Attributes>
+          </AppResource>
+        </AppResources>
+        <DeploymentPaths>
+          <DeploymentPath Name="Demo AWS Mini - AWS EC2 Mini-Shell Instance" Default="true">
+            <DeploymentService Name="AWS EC2 Mini-Shell Instance" CloudProvider="Demo AWS Mini">
+              <Attributes>
+                <Attribute Name="ExecutionServer" Value="Production" />
+                <Attribute Name="User" Value="" />
+                <Attribute Name="Password" Value="54hKweHFkBB2PiKWMQimZ3TggVUGIImUIIg9pfEaWL0=" />
+                <Attribute Name="AWS EC2" Value="Demo AWS Mini" />
+                <Attribute Name="AWS AMI Id" Value="ami-94e26af4" />
+                <Attribute Name="Instance Type" Value="t2.micro" />
+              </Attributes>
+            </DeploymentService>
+          </DeploymentPath>
+        </DeploymentPaths>
+      </AppResourceInfo>
+    </App>
+  </Apps>
+  <Routes>
+    <Connector Source="Leads Load Balancer" Target="BlazeMeter" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Apache Website 3" Target="Leads Load Balancer" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Apache Website 1" Target="Leads Load Balancer" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Apache Website 2" Target="Leads Load Balancer" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Apache Website 3" Target="Leads Core" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Apache Website 1" Target="Leads Core" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Apache Website 2" Target="Leads Core" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Virtualized SalesForce" Target="Leads Core" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Leads Core" Target="Database Server 1" Direction="Bi" SourceType="Service" TargetType="Service" />
+    <Connector Source="Leads Core" Target="Database Server 2" Direction="Bi" SourceType="Service" TargetType="Service" />
+  </Routes>
+  <Inputs>
+    <GlobalInput Name="Cloud Provider" Type="Lookup">
+      <PossibleValues>
+        <Value>AWS EMEA</Value>
+        <Value>AWS Oregon</Value>
+        <Value>Azure West Coast</Value>
+        <Value>Openstack San Jose</Value>
+        <Value>vCenter San Jose</Value>
+      </PossibleValues>
+    </GlobalInput>
+  </Inputs>
+</TopologyInfo>
