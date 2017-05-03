@@ -39,3 +39,6 @@ Creating a BlazeMeter test:
 Output of Start_Traffic - URL of live BlazeMeter result page:
 
 ![](blazemeter%20output%20url.png)
+
+Live BlazeMeter result page:
+![](blazemeter%20result.png)
