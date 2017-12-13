@@ -18,7 +18,7 @@ In order to use this plugin:
 - Add the BlazeMeter service to a blueprint
 - Add a resource/app with a name containing the test name, e.g. "Flex Load Balancer", and a URL stored in an
 attribute Web Interface; add a visual connector between this resource and the BlazeMeter service
-- Run the Start Test command
+- Run the Start Test command. The command will then look for any resource/app that is connected to the BlazeMeter service, which also has the 'Web Interface' attribute, and will try to find a matching test to execute for that resource/app.
 - You can also provide a test name to the Start Test command, and a test with that specific name will get executed for each of the connected resources/apps
 
 Creating a BlazeMeter test:
