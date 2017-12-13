@@ -1,0 +1,36 @@
+<Shell>
+    <ShellAttributes>
+        <AttributeInfo Name="BlazeMeterKey" Description="" Type="String" DefaultValue="" IsReadOnly="false">
+            <Rules>
+                <Rule Name="Configuration"/>
+            </Rules>
+        </AttributeInfo>
+        <AttributeInfo Name="BlazeMeterSecret" Description="" Type="String" DefaultValue=""
+                       IsReadOnly="false">
+            <Rules>
+                <Rule Name="Configuration"/>
+            </Rules>
+        </AttributeInfo>
+    </ShellAttributes>
+    <ShellModel Family="Generic Service">
+        <ResourceModel Name="CA BlazeMeter Service" Description="" SupportsConcurrentCommands="true" ImagePath="BlazeMeter.png" >
+            <AttachedAttributes>
+                <AttachedAttribute Name="BlazeMeterKey" IsOverridable="true" IsLocal="true" UserInput="true">
+                  <AllowedValues />
+                </AttachedAttribute>
+                <AttachedAttribute Name="BlazeMeterSecret" IsOverridable="true" IsLocal="true" UserInput="true">
+                  <AllowedValues />
+                </AttachedAttribute>
+            </AttachedAttributes>
+            <AttributeValues>
+                <AttributeValue Name="BlazeMeterKey" Value="" />
+                <AttributeValue Name="BlazeMeterSecret" Value="" />
+            </AttributeValues>
+            <ParentModels />
+            <Drivers>
+                <DriverName>CaBlazemeterServiceDriver</DriverName>
+            </Drivers>
+            <Scripts />
+        </ResourceModel>
+    </ShellModel>
+</Shell>

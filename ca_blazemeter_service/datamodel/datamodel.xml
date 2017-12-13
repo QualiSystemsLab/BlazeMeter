@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataModelInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.qualisystems.com/ResourceManagement/DataModelSchema.xsd">
+  <Attributes />
+  <ResourceFamilies>
+    <ResourceFamily Name="Generic Service" Description="" AllowRemoteConnection="true" IsService="true" ServiceType="Regular">
+     <AttachedAttributes />
+     <AttributeValues />
+     <Models />
+     <Categories>
+        <Category>SaaS</Category>
+     </Categories>
+    </ResourceFamily>
+  </ResourceFamilies>
+  <DriverDescriptors>
+      <DriverDescriptor Name="CaBlazemeterServiceDriver" DriverType="PythonDriver" />
+  </DriverDescriptors>
+</DataModelInfo>

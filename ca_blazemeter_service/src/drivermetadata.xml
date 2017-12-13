@@ -1,0 +1,23 @@
+<Driver Description="Describe the purpose of your CloudShell shell" MainClass="driver.CaBlazemeterServiceDriver" Name="CaBlazemeterServiceDriver" Version="1.0.0">
+    <Layout>
+        <Command Description="Start a test on BlazeMeter" DisplayName="Start Tests"
+                 Name="start_tests" >
+            <Parameters>
+                <Parameter Name="test_name" Type="String" Mandatory = "False" DefaultValue=""
+                           DisplayName="Test Name" Description="Provide a test name to execute or leave empty to run all of the tests related to the connected apps/resources"/>
+            </Parameters>
+        </Command>
+
+        <Category Name="Hidden Commands">
+            <Command Description="Wait for a test to end" DisplayName="Wait for test"
+                 Name="wait_for_test" >
+                <Parameters>
+                    <Parameter Name="session_id" Type="String" Mandatory = "True" DefaultValue=""
+                               DisplayName="String Param" Description="Session id returned from the Start test command"/>
+                    <Parameter Name="test_name" Type="String" Mandatory = "True"
+                               DefaultValue="" DisplayName="Target Name" Description="App/Resource name"/>
+                </Parameters>
+            </Command>
+        </Category>
+    </Layout>
+</Driver>
