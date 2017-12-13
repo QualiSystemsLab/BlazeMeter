@@ -12,24 +12,14 @@ Starting the test, displaying the results page, and polling for completion shoul
 but the BlazeMeter API calls to reconfigure the test would need to be updated.
 
 In order to use this plugin:
+- Load the release package which includes the Service and its driver
+- Update the BlazeMeterKey and BlazeMeterSecret default values and remove the 'User Input' from them
 - Create a test in BlazeMeter with some name, e.g. "Flex Load Balancer" 
-- Create a resource model representing a BlazeMeter resource and attach relevant attributes
-- Attach Start_Traffic and Wait_For_Traffic to the model
-- Create a BlazeMeter resource and fill in the attributes
-- Add a BlazeMeter resource to a reservation
-- Add a resource with a name containing the test name, e.g. "Flex Load Balancer", and a URL stored in an 
-attribute Web Interface; add a visual connector between this resource and the BlazeMeter resource 
-- Run Start_Traffic
-
-For your setup, you will most likely want to update the scripts:
- - Read BlazeMeter key and secret from resource attributes instead of hard-coding them in the script
- - Change the way the test is located (currently using visual connectors and the connected resource name)
- - Change the way the test target URL is determined and the attribute name -- currently hard-coded in the blueprint
- 
-In the example blueprint in this repo, the BlazeMeter and target resource are both represented as apps because they
-came from CloudShell Live, but ordinary resources or services can be used instead. Attach the scripts to the appropriate
-resource or service model.
-
+- Add the BlazeMeter service to a blueprint
+- Add a resource/app with a name containing the test name, e.g. "Flex Load Balancer", and a URL stored in an
+attribute Web Interface; add a visual connector between this resource and the BlazeMeter service
+- Run the Start Test command
+- You can also provide a test name to the Start Test command, and a test with that specific name will get executed for each of the connected resources/apps
 
 Creating a BlazeMeter test:
 
